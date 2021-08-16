@@ -1,0 +1,2 @@
+This project is creating a new version of the Linux kernel which gives more control over interprocess communication related calls. This implements a message passing interface
+that can be queried asychronously by multiple processes.
