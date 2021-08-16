@@ -1,0 +1,2 @@
+This project uses two texts files, a file that filters words and a text file (in this case the Quaran), and outputs a new file which prints every word exculding the filtered
+words, the number of occurences, and the line number the word was found at. Similar to the index of a textbook.
