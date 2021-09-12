@@ -1,8 +1,5 @@
-// CMSC 341 - Summer 2020 - Project 1
 // File: Llama.cpp
 // Author: Devin Hennayake
-// E-mail: devin7@umbc.edu
-// Date: 11 June 2020
 // Description: .cpp file for Llama.h
 
 #ifndef _LLAMA_CPP_
