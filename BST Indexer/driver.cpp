@@ -1,11 +1,5 @@
 /**************************************************************
  * File:    driver.cpp
- * Project: CMSC 341 - Project 2 - Index Creator
- * Author : Mr. Lupoli (with help)
- * Date   : 17-June-2014
- * Section: Lecture-02
- * E-mail:  slupoli@cs.umbc.edu
- *
  * Main Program Driver.
  *
  *************************************************************/
