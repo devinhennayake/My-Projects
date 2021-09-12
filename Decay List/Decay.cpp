@@ -1,10 +1,6 @@
 /*****************************************
 ** File:    Decay.cpp
-** Project: CMSC 202 Project 3, Fall 2019
 ** Author:  Devin Hennayake
-** Date:    10/29/19
-** Section: 22
-** E-mail:  devin7@umbc.edu
 **
 ** This file contains the code for the Decay.h header file
 **
