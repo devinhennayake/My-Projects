@@ -1,9 +1,6 @@
 /*****************************************
 ** File:    Word.cpp
-** Project: CMSC 341 Project 2, Summer 2020
 ** Author:  Devin Hennayake
-** Date:    25 June 2020
-** E-mail:  devin7@umbc.edu
 **
 ** This file contains the cpp code for Word.h
 **
