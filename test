@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NMC DevSecOps QLA</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.9.14/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-core@1.9.14/survey.min.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css"></head>
+    <body>
+        <center>
+            <br>
+            <h1 style="font-family:FUTURA-PT,SANS-SERIF; color:#242557;">Booz Allen Hamilton</h1>
+            <h2 style="font-family:FUTURA-PT,SANS-SERIF; color:#242557;">NMC DevSecOps QLA Survey</h2>
+            <br>
+       <div id="surveyElement" style="display:inline-block;width:70%;text-align:left;"></div>
+        <div id="surveyResult"></div>
+        <script type="text/javascript" src="./index.js"></script>
+        </center>
+    </body>
+</html>
+
+<script>
+
+Survey
+    .StylesManager
+    .applyTheme("darkblue");
+
+var json = {
+
+    "pages": [
+        {
+            "name": "page1",
+            "navigationTitle": "Requester",
+            "navigationDescription": "Requester's info",
+            "elements": [
+                   {
+                    "type": "panel",
+                    "name": "first_page_container_panel",
+                    "elements": [
+                          {
+                            "type": "panel",
+                            "name": "interview_respondent_information_patient_date_of_birth_panel",
+                            "elements": [
+                                {
+                                 "type": "radiogroup",
+                                 "name": "condquestion",
+                                 "title": "Example",
+                                 "isRequired": true,
+                                 "choices": [
+                                 "More Question", "None"
+                                 ],
+                                 "colCount": 0
+                                }, {
+                                "type": "radiogroup",
+                                "name": "followup",
+                                "title": "Follow-up Question",
+                                "visibleIf": "{condquestion}='More Question'",
+                                "isRequired": true,
+                                "choices": [
+                                    "Yes", "No"
+                                ],
+                                "colCount": 0
+                                }
+                            ],
+                            "title": "Conditional Question Example"
+                        }, {
+                            "type": "panel",
+                            "name": "data_collector_information",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "name": "team_name",
+                                    "title": "Team Name"
+                                }, {
+                                    "type": "text",
+                                    "name": "team_size",
+                                    "title": "Technical | Engineer Team Size",
+                                    "inputType": "number"
+                                }, {
+                                    "type": "text",
+                                    "name": "pop_length",
+                                    "title": "Period of Performance Length",
+                                    "inputType": "number"
+                                }, {
+                                    "type": "text",
+                                    "name": "email",
+                                    "title": "Email",
+                                    "inputType": "email"
+                                }, {
+                                    "type": "text",
+                                    "name": "scope_desc",
+                                    "title": "Scope"
+                                }
+                            ],
+                            "title": "Survey Requester Information",
+                            "showNumber": false,
+                            "showQuestionNumbers": "off"
+                        }
+                    ],
+                    "startWithNewLine": false
+                }
+            ]
+        }, {
+            "name": "page2",
+            "navigationTitle": "Organization",
+            "navigationDescription": "Team Structure",
+            "elements": [
+                {
+                    "type": "boolean",
+                    "name": "more_app",
+                    "title": "More applicable questions?",
+                    "isRequired": true,
+                    "labelTrue": "Yes",
+                    "labelFalse": "No",
+                    "hideNumber": true
+                },
+
+                        {
+                    "type": "panel",
+                    "name": "panel_name",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "drop_down",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "drop_down",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "drop_down",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },  {
+                            "type": "dropdown",
+                            "name": "drop_down",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "radiogroup",
+                            "name": "radio_button",
+                            "startWithNewLine": false,
+                            "title": "Radio Button Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ],
+                            "colCount": 5
+                        }
+                    ],
+                    "visibleIf": "{more_app} = true",
+                    "title": "More Applicable Fields",
+                    "showNumber": false,
+                    "showQuestionNumbers": "off"
+                }, {
+                    "type": "panel",
+                    "name": "panel_name",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },  {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": false,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "radiogroup",
+                            "name": "radio_button",
+                            "startWithNewLine": false,
+                            "title": "Radio Button Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ],
+                            "colCount": 5
+                        }
+
+                    ],
+                    "visibleIf": "{more_app} = false",
+                    "title": "Less Applicable Fields",
+                    "showNumber": false,
+                    "showQuestionNumbers": "off"
+                }
+            ]
+        }, {
+            "name": "page3",
+            "navigationTitle": "Process",
+            "navigationDescription": "Project Structure",
+            "elements": [{
+                    "type": "panel",
+                    "name": "panel_name",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Just Dropdowns",
+                    "startWithNewLine": true,
+                    "showNumber": false,
+                    "showQuestionNumbers": "off"
+                }
+            ]
+        }, {
+            "name": "page4",
+            "navigationTitle": "Technology",
+            "navigationDescription": "Tool Stack",
+          "elements": [{
+                    "type": "panel",
+                    "name": "panel_name",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Just Dropdowns",
+                    "startWithNewLine": true,
+                    "showNumber": false,
+                    "showQuestionNumbers": "off"
+                }
+            ]
+        }, {
+            "name": "page5",
+            "navigationTitle": "Governance",
+            "navigationDescription": "Project Overview",
+            "elements": [{
+                    "type": "panel",
+                    "name": "panel_name",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        },{
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }, {
+                            "type": "dropdown",
+                            "name": "dropdown_question",
+                            "startWithNewLine": true,
+                            "title": "Dropdown Question",
+                            "choices": [
+                                {
+                                    "value": "0",
+                                    "text": "Base"
+                                }, {
+                                    "value": "1",
+                                    "text": "Beginner"
+                                }, {
+                                    "value": "3",
+                                    "text": "Immediate"
+                                }, {
+                                    "value": "5",
+                                    "text": "Advance"
+                                }, {
+                                    "value": "7",
+                                    "text": "Extreme"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Just Dropdowns",
+                    "startWithNewLine": true,
+                    "showNumber": false,
+                    "showQuestionNumbers": "off"
+                }
+            ]
+        }
+    ],
+    "showProgressBar": "top",
+    "progressBarType": "buttons"
+};
+
+window.survey = new Survey.Model(json);
+
+survey
+    .onComplete
+    .add(function (sender) {
+        document
+            .querySelector('#surveyResult')
+            .textContent = "Result JSON: not connect to a database";
+    });
+
+$("#surveyElement").Survey({model: survey});
+</script>
